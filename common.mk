@@ -25,6 +25,10 @@ ifneq (,$(filter bt, $(TARGET_COMMON_QTI_COMPONENTS)))
 include $(DEVICE_PATH)/bt/qti-bt.mk
 endif
 
+ifneq (,$(filter gps, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(DEVICE_PATH)/gps/qti-gps.mk
+endif
+
 ifneq (,$(filter perf, $(TARGET_COMMON_QTI_COMPONENTS)))
 include $(DEVICE_PATH)/perf/qti-perf.mk
 endif
@@ -34,6 +38,14 @@ include $(DEVICE_PATH)/telephony/qti-telephony.mk
 endif
 
 # 845 series and newer
+ifneq (,$(filter audio, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(DEVICE_PATH)/audio/qti-audio.mk
+endif
+
+ifneq (,$(filter display, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(DEVICE_PATH)/display/qti-display.mk
+endif
+
 ifneq (,$(filter wfd, $(TARGET_COMMON_QTI_COMPONENTS)))
 include $(DEVICE_PATH)/wfd/qti-wfd.mk
 endif
